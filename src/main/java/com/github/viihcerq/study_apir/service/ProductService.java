@@ -8,5 +8,17 @@ import java.util.List;
 public class ProductService {
     private List<Product> products;
 
+    public Product createProduct(Product product){
+        return null;
+    }
+    public void updateProduct(Long id, Product product){
+
+    }
+    public void getProductId(Long id){
+
+    }
+    public void deleteProduct(Long id){
+
+    }
 
 }
