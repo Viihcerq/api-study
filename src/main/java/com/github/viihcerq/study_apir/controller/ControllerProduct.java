@@ -12,7 +12,7 @@ public class ControllerProduct {
     @Autowired
     private ProductService service;
     @PostMapping
-    public ResponseEntity<String> create(){
+    public ResponseEntity<String> create(Product product){
         service.createProduct(null);
         return ResponseEntity.status(201).body("Produto criado");
     }
