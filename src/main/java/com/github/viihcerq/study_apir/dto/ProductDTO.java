@@ -1,23 +1,13 @@
-package com.github.viihcerq.study_apir.model;
+package com.github.viihcerq.study_apir.dto;
 
 import java.math.BigDecimal;
 
-public class Product {
-
-    private Long id;
+public class ProductDTO {
     private String name;
     private BigDecimal valor;
 
-    public Long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public void setName(String name) {
