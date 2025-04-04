@@ -3,6 +3,8 @@ package com.github.viihcerq.study_apir.service;
 import com.github.viihcerq.study_apir.dto.ProductDTO;
 import com.github.viihcerq.study_apir.dto.ProductUpdateDTO;
 import com.github.viihcerq.study_apir.model.Product;
+import com.github.viihcerq.study_apir.repository.ProductRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -12,36 +14,36 @@ import java.util.Optional;
 
 @Service
 public class ProductService {
-    private List<Product> products = new ArrayList<>();
-
-    private static  final BigDecimal VALOR_PADRAO = new BigDecimal(2000);
+    @Autowired
+    private ProductRepository repository;
 
     private Long sequence = 1L;
     // o objeto é referenciado são os mesmos em memoria
-    public Product createProduct(ProductDTO dto){
-        Product product = new Product();
-        product.setId(sequence++);
-        product.setName(dto.getName());
-        product.setValor(VALOR_PADRAO);
-        products.add(product);
-        return product;
+    public Product createProduct(ProductDTO dto) {
+        return repository.save(dto.toModel());
     }
-    public Optional<Product> updateProduct(Long id, ProductUpdateDTO dto){
-        return products.stream().filter(product1 -> product1.getId().equals(id)).findFirst()
-                .map(p -> {
-                    p.setValor(dto.getValor());
-                    return p;
-                });
 
+    public Optional<Product> updateProduct(Long id, ProductUpdateDTO dto) {
+
+        return repository.findById(id)
+                .map(p -> repository.save(dto.toModel(p)));
     }
-    public Optional<Product> getProductId(Long id){
-        return products.stream().filter(p -> p.getId().equals(id)).findFirst();
+
+    public Optional<Product> getProductById(Long id) {
+        return repository.findById(id);
     }
-    public List<Product> getAll(){
-        return products;
+
+    public List<Product> getAll() {
+        return repository.findAll();
     }
-    public boolean deleteProduct(Long id){
-        return products.removeIf(p -> p.getId().equals(id));
+
+    public boolean deleteProduct(Long id) {
+        if (repository.existsById(id)) {
+            repository.deleteById(id);
+            return true;
+        }
+
+        return false;
     }
 
 }
