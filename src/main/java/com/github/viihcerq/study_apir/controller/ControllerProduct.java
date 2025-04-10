@@ -35,14 +35,14 @@ public class ControllerProduct {
 
     @GetMapping("/{id}")
     public ResponseEntity<ProductResponse> findById(@PathVariable Long id){
-        return service.getProductId(id)
+        return service.getProductById(id)
                 .map(p -> new ProductResponse().toDto(p))
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
     @GetMapping
-    public ResponseEntity<List<ProductResponse>> findAll(@PathVariable Long id){
+    public ResponseEntity<List<ProductResponse>> findAll(){
         List<ProductResponse> responses =
                 service.getAll().stream()
                         .map(p -> new ProductResponse().toDto(p))
