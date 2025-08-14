@@ -1,14 +1,12 @@
 package com.github.viihcerq.study_apir.service;
 
-import com.github.viihcerq.study_apir.dto.ProductDTO;
-import com.github.viihcerq.study_apir.dto.ProductUpdateDTO;
+import com.github.viihcerq.study_apir.dto.product.ProductDTO;
+import com.github.viihcerq.study_apir.dto.product.ProductUpdateDTO;
 import com.github.viihcerq.study_apir.model.Product;
 import com.github.viihcerq.study_apir.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,8 +15,6 @@ public class ProductService {
     @Autowired
     private ProductRepository repository;
 
-    private Long sequence = 1L;
-    // o objeto é referenciado são os mesmos em memoria
     public Product createProduct(ProductDTO dto) {
         return repository.save(dto.toModel());
     }

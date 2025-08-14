@@ -1,27 +1,18 @@
-package com.github.viihcerq.study_apir.dto;
+package com.github.viihcerq.study_apir.dto.product;
 
 import com.github.viihcerq.study_apir.model.Product;
 
 import java.math.BigDecimal;
 
-public class ProductResponse {
-    private Long id;
+public class ProductDTO {
     private String name;
     private BigDecimal valor;
 
-    public ProductResponse toDto(Product product){
-        this.setId(product.getId());
-        this.setName(product.getName());
-        this.setValor(product.getValor());
-        return this;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
+    public Product toModel(){
+        Product product = new Product();
+        product.setName(this.name);
+        product.setValor(this.valor);
+        return product;
     }
 
     public String getName() {

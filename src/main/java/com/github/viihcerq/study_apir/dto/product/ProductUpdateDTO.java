@@ -1,4 +1,4 @@
-package com.github.viihcerq.study_apir.dto;
+package com.github.viihcerq.study_apir.dto.product;
 
 import com.github.viihcerq.study_apir.model.Product;
 
