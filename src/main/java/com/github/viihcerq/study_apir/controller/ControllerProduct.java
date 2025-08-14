@@ -1,16 +1,14 @@
 package com.github.viihcerq.study_apir.controller;
 
-import com.github.viihcerq.study_apir.dto.ProductDTO;
-import com.github.viihcerq.study_apir.dto.ProductResponse;
-import com.github.viihcerq.study_apir.dto.ProductUpdateDTO;
-import com.github.viihcerq.study_apir.model.Product;
+import com.github.viihcerq.study_apir.dto.product.ProductDTO;
+import com.github.viihcerq.study_apir.dto.product.ProductResponse;
+import com.github.viihcerq.study_apir.dto.product.ProductUpdateDTO;
 import com.github.viihcerq.study_apir.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @RestController
