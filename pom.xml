@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.github.viihcerq</groupId>
 	<artifactId>study-apir</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.2.0</version>
 	<name>study-apir</name>
 	<description>Api for study microsservices</description>
 	<url/>
@@ -71,6 +71,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>app</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
