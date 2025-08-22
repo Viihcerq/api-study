@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
-@RequestMapping("order")
+@RequestMapping("/api/${api.version}/order")
 public class ControllerOrder {
 
     @Autowired

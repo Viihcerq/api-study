@@ -20,7 +20,6 @@ public class ProductService {
     }
 
     public Optional<Product> updateProduct(Long id, ProductUpdateDTO dto) {
-
         return repository.findById(id)
                 .map(p -> repository.save(dto.toModel(p)));
     }
