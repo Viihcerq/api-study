@@ -1,6 +1,6 @@
 package com.github.viihcerq.study_apir.dto.order;
 
-import com.github.viihcerq.study_apir.model.Order;
+import com.github.viihcerq.study_apir.model.Orders;
 
 public class OrderUpdateDTO {
     private String status;
@@ -13,9 +13,9 @@ public class OrderUpdateDTO {
         this.status = status;
     }
 
-    public Order toModel(){
-        Order order = new Order();
-        order.setStatus(this.status);
-        return order;
+    public Orders toModel(){
+        Orders orders = new Orders();
+        orders.setStatus(this.status);
+        return orders;
     }
 }

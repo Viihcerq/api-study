@@ -1,7 +1,6 @@
 package com.github.viihcerq.study_apir.dto.order;
 
 import com.github.viihcerq.study_apir.model.Item;
-import com.github.viihcerq.study_apir.model.Order;
 
 import java.util.List;
 

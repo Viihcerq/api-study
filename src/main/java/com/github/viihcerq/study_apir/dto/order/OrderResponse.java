@@ -1,8 +1,7 @@
 package com.github.viihcerq.study_apir.dto.order;
 
 import com.github.viihcerq.study_apir.dto.item.ItemResponse;
-import com.github.viihcerq.study_apir.model.Item;
-import com.github.viihcerq.study_apir.model.Order;
+import com.github.viihcerq.study_apir.model.Orders;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,11 +37,11 @@ public class OrderResponse {
         this.items = items;
     }
 
-    public OrderResponse toDto(Order order) {
-        this.setId(order.getId());
-        this.setStatus(order.getStatus());
+    public OrderResponse toDto(Orders orders) {
+        this.setId(orders.getId());
+        this.setStatus(orders.getStatus());
 
-        List<ItemResponse> items = order.getItems()
+        List<ItemResponse> items = orders.getItems()
                 .stream()
                 .map(item -> new ItemResponse().toDto(item))
                 .collect(Collectors.toList());

@@ -1,9 +1,5 @@
 package com.github.viihcerq.study_apir.dto.item;
 
-import com.github.viihcerq.study_apir.model.Order;
-import com.github.viihcerq.study_apir.model.Product;
-import jakarta.persistence.ManyToOne;
-
 import java.math.BigDecimal;
 
 public class ItemDTO {

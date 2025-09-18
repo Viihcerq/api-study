@@ -5,14 +5,15 @@ import jakarta.persistence.*;
 import java.util.List;
 
 @Entity
-public class Order {
+
+public class Orders {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String status;
 
-    @OneToMany(mappedBy = "order",
+    @OneToMany(mappedBy = "orders",
             cascade = CascadeType.ALL,
             orphanRemoval = true)
     private List<Item> items;

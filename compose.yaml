@@ -1,0 +1,29 @@
+services:
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=new_user
+      - POSTGRES_PASSWORD=my_pwd
+      - POSTGRES_DB=my_database
+    ports:
+      - 5432:5432
+    networks:
+      - app-networks
+  api:
+    build: .
+    #image: viihcerq/study-apir:0.0.1
+    depends_on:
+      - db
+    ports:
+      - 9000:9000
+    environment:
+      - DB_SERVER=db
+      - DB_PORT=5432
+      - DB_DATABASE=postgres
+      - DB_USER=new_user
+      - DB_PASSWORD=my_pwd
+    networks:
+      - app-networks
+
+networks:
+  app-networks:
