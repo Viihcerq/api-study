@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.0](https://github.com/Viihcerq/api-study/compare/v1.0.0...v1.1.0) (2025-10-17)
+
+
+### Features
+
+* add push branch develop ([6285231](https://github.com/Viihcerq/api-study/commit/628523180cf50843fdd5abb6d296c615530a8b87))
+* remove file ([d2c75e1](https://github.com/Viihcerq/api-study/commit/d2c75e1faa18e4ee276ad2cf0de687b389eda110))
+* remove file ([12b7922](https://github.com/Viihcerq/api-study/commit/12b7922d480942ab3538b68ab3bed66f119b76b7))
+
 ## 1.0.0 (2025-10-09)
 
 
