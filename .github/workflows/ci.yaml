@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - feature/**
+      - release
+      - hotfix
 jobs:
   build_and_pull:
     runs-on: ubuntu-latest
