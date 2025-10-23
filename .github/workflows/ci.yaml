@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - feature/**
+      - release
+      - hotfix
 jobs:
   build_and_pull:
     runs-on: ubuntu-latest
@@ -11,6 +13,8 @@ jobs:
       -   name: Checkout
           uses: actions/checkout@v5
       -   name: Build da Aplicação
-          run: mvn clean package
+          run: mvn clean package -DskipTests
       -   name: Execução de teste unitario
           run: mvn test
+      -   name: Teste de criação da imagem docker
+          run: docker build -t study-apir .
