@@ -26,7 +26,7 @@ public class Item {
     @ManyToOne
     @Cascade(value = CascadeType.ALL)
     @JoinColumn(name = "orders_id")
-    private Orders orders;
+    private Order order;
 
     private BigDecimal qta;
     private BigDecimal valor;
@@ -47,12 +47,12 @@ public class Item {
         this.product = product;
     }
 
-    public Orders getOrder() {
-        return orders;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrder(Orders orders) {
-        this.orders = orders;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public BigDecimal getQta() {

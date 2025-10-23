@@ -1,16 +1,18 @@
 package com.github.viihcerq.study_apir.dto.order;
 
 import com.github.viihcerq.study_apir.dto.item.ItemResponse;
-import com.github.viihcerq.study_apir.model.Orders;
+import com.github.viihcerq.study_apir.model.Order;
+import com.github.viihcerq.study_apir.model.OrderStatus;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
 public class OrderResponse {
 
     private Long id;
-    private String status;
-
+    private OrderStatus status;
+    private LocalDate dateDelivery;
     private List<ItemResponse> items;
 
     public Long getId() {
@@ -21,11 +23,11 @@ public class OrderResponse {
         this.id = id;
     }
 
-    public String getStatus() {
+    public OrderStatus getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(OrderStatus status) {
         this.status = status;
     }
 
@@ -37,11 +39,20 @@ public class OrderResponse {
         this.items = items;
     }
 
-    public OrderResponse toDto(Orders orders) {
-        this.setId(orders.getId());
-        this.setStatus(orders.getStatus());
+    public LocalDate getDateDelivery() {
+        return dateDelivery;
+    }
 
-        List<ItemResponse> items = orders.getItems()
+    public void setDateDelivery(LocalDate dateDelivery) {
+        this.dateDelivery = dateDelivery;
+    }
+
+    public OrderResponse toDto(Order order) {
+        this.setId(order.getId());
+        this.setStatus(order.getStatus());
+        this.setDateDelivery(order.getDateDelivery());
+
+        List<ItemResponse> items = order.getItems()
                 .stream()
                 .map(item -> new ItemResponse().toDto(item))
                 .collect(Collectors.toList());

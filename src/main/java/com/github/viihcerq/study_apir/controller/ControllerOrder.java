@@ -19,11 +19,8 @@ public class ControllerOrder {
     private OrderService service;
 
     @PostMapping
-    public ResponseEntity<OrderResponse> create(
-            @RequestBody OrderDTO dto) {
-        return ResponseEntity
-                .status(201)
-                .body(new OrderResponse().toDto(service.create(dto)));
+    public ResponseEntity<OrderResponse> create(@RequestBody OrderDTO dto) {
+        return ResponseEntity.status(201).body(new OrderResponse().toDto(service.create(dto)));
     }
 
     @GetMapping("{id}")

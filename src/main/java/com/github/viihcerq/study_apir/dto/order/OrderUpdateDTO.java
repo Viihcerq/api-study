@@ -1,21 +1,24 @@
 package com.github.viihcerq.study_apir.dto.order;
 
-import com.github.viihcerq.study_apir.model.Orders;
+import com.github.viihcerq.study_apir.model.Order;
+import com.github.viihcerq.study_apir.model.OrderStatus;
+import com.github.viihcerq.study_apir.model.Product;
+
+import java.math.BigDecimal;
 
 public class OrderUpdateDTO {
-    private String status;
+    private BigDecimal valor;
 
-    public String getStatus() {
-        return status;
+    public BigDecimal getValor() {
+        return valor;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setValor(BigDecimal valor) {
+        this.valor = valor;
     }
 
-    public Orders toModel(){
-        Orders orders = new Orders();
-        orders.setStatus(this.status);
-        return orders;
+    public Product toModel(Product product){
+        product.setValor(this.valor);
+        return product;
     }
 }

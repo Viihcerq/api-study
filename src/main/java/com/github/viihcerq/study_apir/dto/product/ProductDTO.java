@@ -6,12 +6,13 @@ import java.math.BigDecimal;
 
 public class ProductDTO {
     private String name;
-    private BigDecimal valor;
 
     public Product toModel(){
+        BigDecimal VALOR_PADRAO = new BigDecimal(2000);
+
         Product product = new Product();
+        product.setValor(VALOR_PADRAO);
         product.setName(this.name);
-        product.setValor(this.valor);
         return product;
     }
 
@@ -21,13 +22,5 @@ public class ProductDTO {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public BigDecimal getValor() {
-        return valor;
-    }
-
-    public void setValor(BigDecimal valor) {
-        this.valor = valor;
     }
 }
