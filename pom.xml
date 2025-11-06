@@ -9,7 +9,7 @@
 	</parent>
 	<groupId>com.github.viihcerq</groupId>
 	<artifactId>study-apir</artifactId>
-	<version>1.1.0</version>
+	<version>1.1.1-SNAPSHOT</version>
 	<name>study-apir</name>
 	<description>Api for study microsservices</description>
 	<url/>
