@@ -20,7 +20,7 @@ jobs:
       -   name: Testes Integrados
           run: |
             docker compose up -d
-            ./server/run_integrated_tests.sh
+              ./server/run_integration_tests.sh
 
       -   name: Build and push
           uses: docker/build-push-action@v6
