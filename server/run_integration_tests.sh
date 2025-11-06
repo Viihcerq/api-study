@@ -2,8 +2,8 @@
 
 set -e
 
-apt update
-apt install -y jq
+sudo apt update
+sudo apt install -y jq
 
 HTTP_STATUS=$(
     curl -X 'POST' \
@@ -13,9 +13,9 @@ HTTP_STATUS=$(
     -w "%{http_code}" \
     -o product_create.json \
     -d '{
-    "nome": "Uva"
-    "valor": 20
-    }'
+        "nome": "Uva",
+        "valor": 20
+        }'
 )
 
 echo "Status HTTP: $HTTP_STATUS"
